@@ -1,0 +1,39 @@
+[stein@super ~]$ docker run -it --name exe1.5 ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+:
+Status: Downloaded newer image for ubuntu:latest
+Input website:
+helsinki.fi
+Searching..
+sh: 1: curl: not found
+[stein@super ~]$
+
+# ^^ "curl" is not found and container exits.
+
+
+# Start container and get curl in it
+[stein@super ~]$ docker start bd1
+
+# Install curl in container
+[stein@super ~]$ docker exec -it bd1 bash
+root@bd1e50045a80:/# apt-get update
+root@bd1e50045a80:/# apt-get install curl
+root@bd1e50045a80:/# curl
+curl: try 'curl --help' or 'curl --manual' for more information
+root@bd1e50045a80:/# exit
+
+# Stop and restart container attached
+
+[stein@super ~]$ docker stop bd1
+[stein@super ~]$ docker start -ai bd1
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+[stein@super ~]$
+

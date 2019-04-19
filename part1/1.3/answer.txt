@@ -1,0 +1,11 @@
+[stein@super ~]$ docker run -it devopsdockeruh/pull_exercise
+:
+Status: Downloaded newer image for devopsdockeruh/pull_exercise:latest
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+[stein@super ~]$ 
+
+
+Secret mesage is "This is the secret message"
+

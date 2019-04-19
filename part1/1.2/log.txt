@@ -1,0 +1,35 @@
+#### 1.2 ####
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+f5207307a4c4        nginx               "nginx -g 'daemon of…"   2 minutes ago       Up 2 minutes               80/tcp              modest_lichterman
+22aeb2c48c60        nginx               "nginx -g 'daemon of…"   2 minutes ago       Exited (0) 2 minutes ago                       recursing_banach
+9ceaa0eacd2f        nginx               "nginx -g 'daemon of…"   2 minutes ago       Exited (0) 2 minutes ago                       elastic_mahavira
+[stein@super ~]$ docker stop f5
+f5
+[stein@super ~]$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+f5207307a4c4a6c672c16e6c1aedfd3f506e1869866c438a0a89e7146654f2a2
+22aeb2c48c60a35851eeb6b24eab662ea1fd13856440c0d2e6e4050db6c8a8cd
+9ceaa0eacd2ff05789bec7f2ed95ab9411116605300f13cb18cd85355240a14a
+
+Total reclaimed space: 0B
+[stein@super ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              27a188018e18        2 days ago          109MB
+[stein@super ~]$ docker rmi 27a
+Untagged: nginx:latest
+Untagged: nginx@sha256:e71b1bf4281f25533cf15e6e5f9be4dac74d2328152edf7ecde23abc54e16c1c
+Deleted: sha256:27a188018e1847b312022b02146bb7ac3da54e96fab838b7db9f102c8c3dd778
+Deleted: sha256:261d1996088c57b71d8ea9412f719bcbb8f4cb68a6e463d30abb85cc5fc5724b
+Deleted: sha256:e6fbd1f039a7391ab57afeb1b11a73781bcbd6ae8041d98c5988b90c46ce5726
+Deleted: sha256:5dacd731af1b0386ead06c8b1feff9f65d9e0bdfec032d2cd0bc03690698feda
+[stein@super ~]$
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[stein@super ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[stein@super ~]$
+
+#### 1.2 END ####

@@ -1,0 +1,8 @@
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+f5207307a4c4        nginx               "nginx -g 'daemon of…"   18 seconds ago      Up 18 seconds              80/tcp              modest_lichterman
+22aeb2c48c60        nginx               "nginx -g 'daemon of…"   19 seconds ago      Exited (0) 3 seconds ago                       recursing_banach
+9ceaa0eacd2f        nginx               "nginx -g 'daemon of…"   19 seconds ago      Exited (0) 3 seconds ago                       elastic_mahavira
+
+[stein@super ~]$
+
