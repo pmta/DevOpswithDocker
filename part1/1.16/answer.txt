@@ -1,0 +1,3 @@
+# Released application is at: 
+https://pmta-heroku-example.herokuapp.com/
+
