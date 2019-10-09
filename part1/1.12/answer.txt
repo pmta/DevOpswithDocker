@@ -1,7 +1,8 @@
-# Build backend
-docker build -t frontend-example ./frontend
 
 # Build frontend
+docker build -t frontend-example ./frontend
+
+# Build backend
 docker build -t backend-example ./backend
 
 
@@ -12,4 +13,5 @@ docker run -v `pwd`/logs.txt:/backend-example-docker/logs.txt -d -p 8000:8000 ba
 # Run frontend
 docker run -p 5000:5000 -d frontend-example
 
+# Open http://localhost:5000/ with browser and test with button for 1.12
 
