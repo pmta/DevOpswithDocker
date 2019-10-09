@@ -1,0 +1,7 @@
+# Compilation environment for Teltonika RutOS
+#
+# https://teltonika-networks.com/products/
+# https://wiki.teltonika.lt/view/Software_Development_Kit_instructions
+
+https://hub.docker.com/r/pmta/rutosbuild
+
