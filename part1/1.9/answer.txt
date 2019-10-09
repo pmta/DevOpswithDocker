@@ -7,3 +7,4 @@
 Ports configured correctly!![stein@super ~]$ 
 [stein@super ~]$ 
 
+# Or use brower to connect to http://localhost:8888
