@@ -1,0 +1,26 @@
+[stein@super ~]$ echo "#### 1.1 ####"
+#### 1.1 ####
+[stein@super ~]$ docker run -d nginx
+9ceaa0eacd2ff05789bec7f2ed95ab9411116605300f13cb18cd85355240a14a
+[stein@super ~]$ docker run -d nginx
+22aeb2c48c60a35851eeb6b24eab662ea1fd13856440c0d2e6e4050db6c8a8cd
+[stein@super ~]$ docker run -d nginx
+f5207307a4c4a6c672c16e6c1aedfd3f506e1869866c438a0a89e7146654f2a2
+[stein@super ~]$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+f5207307a4c4        nginx               "nginx -g 'daemon of…"   4 seconds ago       Up 3 seconds        80/tcp              modest_lichterman
+22aeb2c48c60        nginx               "nginx -g 'daemon of…"   5 seconds ago       Up 4 seconds        80/tcp              recursing_banach
+9ceaa0eacd2f        nginx               "nginx -g 'daemon of…"   5 seconds ago       Up 4 seconds        80/tcp              elastic_mahavira
+[stein@super ~]$ docker stop 9c 22
+9c
+22
+[stein@super ~]$ docker ps -a
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+f5207307a4c4        nginx               "nginx -g 'daemon of…"   18 seconds ago      Up 18 seconds              80/tcp              modest_lichterman
+22aeb2c48c60        nginx               "nginx -g 'daemon of…"   19 seconds ago      Exited (0) 3 seconds ago                       recursing_banach
+9ceaa0eacd2f        nginx               "nginx -g 'daemon of…"   19 seconds ago      Exited (0) 3 seconds ago                       elastic_mahavira
+[stein@super ~]$
+[stein@super ~]$echo "#### 1.1 END ####"
+#### 1.1 END ####
+

@@ -1,0 +1,10 @@
+# Run 
+[stein@super docker]$ docker run -p 8888:80 devopsdockeruh/ports_exercise
+
+# While running verify in another terminal:
+
+[stein@super ~]$ curl http://localhost:8888
+Ports configured correctly!![stein@super ~]$ 
+[stein@super ~]$ 
+
+# Or use brower to connect to http://localhost:8888

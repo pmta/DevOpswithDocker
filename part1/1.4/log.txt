@@ -1,0 +1,70 @@
+[stein@super ~]$ docker run --sig-proxy=false devopsdockeruh/exec_bash_exercise
+Unable to find image 'devopsdockeruh/exec_bash_exercise:latest' locally
+latest: Pulling from devopsdockeruh/exec_bash_exercise
+741437d97401: Pull complete 
+34d8874714d7: Pull complete 
+0a108aa26679: Pull complete 
+7f0334c36886: Pull complete 
+65c95cb8b3be: Pull complete 
+a36b708560f8: Pull complete 
+4090f912e6c7: Pull complete 
+ce5fe2607c2e: Pull complete 
+9400f5f657d6: Pull complete 
+c4919883f7fa: Pull complete 
+Digest: sha256:c463832132d1fb0b8b3b60348a6fc36fda7512a4ef2d1050e8bea7b6a6d7a2f3
+Status: Downloaded newer image for devopsdockeruh/exec_bash_exercise:latest
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+^C
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
+8bac524da054        devopsdockeruh/exec_bash_exercise   "node index"        13 seconds ago      Up 8 seconds                            hopeful_galileo
+[stein@super ~]$ docker exec -it 8ba bash
+root@8bac524da054:/usr/app# tail -f ./logs.txt 
+Fri, 19 Apr 2019 16:31:51 GMT
+Fri, 19 Apr 2019 16:31:54 GMT
+Secret message is:
+"Docker is easy"
+Fri, 19 Apr 2019 16:32:00 GMT
+Fri, 19 Apr 2019 16:32:03 GMT
+Fri, 19 Apr 2019 16:32:06 GMT
+Fri, 19 Apr 2019 16:32:09 GMT
+Secret message is:
+"Docker is easy"
+Fri, 19 Apr 2019 16:32:15 GMT
+^C
+root@8bac524da054:/usr/app# exit
+exit
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE                               COMMAND             CREATED              STATUS              PORTS               NAMES
+8bac524da054        devopsdockeruh/exec_bash_exercise   "node index"        About a minute ago   Up About a minute                       hopeful_galileo
+[stein@super ~]$ docker stop 8ba
+8ba
+[stein@super ~]$ docker rm 8ba
+8ba
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[stein@super ~]$ docker images
+REPOSITORY                          TAG                 IMAGE ID            CREATED             SIZE
+devopsdockeruh/exec_bash_exercise   latest              489b6d8f2ab8        2 months ago        897MB
+[stein@super ~]$ docker rmi 489
+Untagged: devopsdockeruh/exec_bash_exercise:latest
+Untagged: devopsdockeruh/exec_bash_exercise@sha256:c463832132d1fb0b8b3b60348a6fc36fda7512a4ef2d1050e8bea7b6a6d7a2f3
+Deleted: sha256:489b6d8f2ab81ec84032c0e16deeded4862006b787353c740f1a4659f1b28a09
+Deleted: sha256:2183b84cef51c03f45122ea74e50c6a1f7f75805faa37ed02486c0543540ff52
+Deleted: sha256:7a1172cde2c65d940db89566d27cef602386c13eeb301aa074840ab392d2208f
+Deleted: sha256:83da39057870ebfa6f036b386e7d2c103c093ffeb398dc314900d92905715baa
+Deleted: sha256:08d50bbe2f6ceaf74b9c10a510ab2308ee6e6355e898c69c17d4331d4388106a
+Deleted: sha256:c813ddc496920ebe32b6966614b95a8c4a51db9037a141765bbdd75f36f79156
+Deleted: sha256:6fbd9662db012d50f620a1444c898914c09b7377285a35d7ac6e2b1d0db85a8f
+Deleted: sha256:39496f7d4f99c499b3c87643953d7b5243cc8a05ed9aad9cf1f404633cf4f8ea
+Deleted: sha256:ac00eef3f557ea71d47b65f3112c0c3b6ae7113153b7205a94bedc496103a6c8
+Deleted: sha256:8f0ebc672b43403012c586feeac72ec83ce8347faab22a2826b952968aefc3d6
+Deleted: sha256:13d5529fd232cacdd8cd561148560e0bf5d65dbc1149faf0c68240985607c303
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[stein@super ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[stein@super ~]$ 
+

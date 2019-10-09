@@ -1,0 +1,5 @@
+docker build -t openjdk .
+docker run -p 8080:8080 -d openjdk
+
+# Open http://localhost:8080/ Press button with text "Press here" to get the message "Success".
+

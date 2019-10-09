@@ -1,0 +1,8 @@
+[stein@super docker]$ touch logs.txt
+[stein@super docker]$ docker run -v `pwd`/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+CTRL-C
+[stein@super docker]$ cat logs.txt
+Sun, 26 May 2019 17:46:37 GMT
+Sun, 26 May 2019 17:46:40 GMT
+Sun, 26 May 2019 17:46:43 GMT
+[stein@super docker]$

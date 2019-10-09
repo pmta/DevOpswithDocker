@@ -1,0 +1,6 @@
+docker build -t ruby .
+docker run -p 3000:3000 -d ruby
+
+# User browser to open http://localhost:3000, press button with text "Press" 
+# to receive message "Press was successfully created." indicating success.
+

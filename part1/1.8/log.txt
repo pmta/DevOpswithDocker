@@ -1,0 +1,49 @@
+[stein@super docker]$ docker run -it devopsdockeruh/first_volume_exercise
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+^CClosing file
+[stein@super docker]$ 
+[stein@super docker]$ docker ps -a
+CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS                     PORTS               NAMES
+8a1a2be27fc3        devopsdockeruh/first_volume_exercise   "node index"             38 seconds ago      Exited (0) 5 seconds ago                       blissful_kalam
+5d368b268b4b        youtube-dl                             "/usr/local/bin/yout…"   2 weeks ago         Exited (0) 2 weeks ago                         reverent_kirch
+1752797f2eef        myfirst                                "/bin/bash"              2 weeks ago         Exited (0) 13 days ago                         nervous_wescoff
+[stein@super docker]$ docker rm 8a1a2be27fc3
+8a1a2be27fc3
+[stein@super docker]$ 
+
+[stein@super docker]$ touch logs.txt
+[stein@super docker]$ ll
+-rw-rw-r--. 1 stein stein  0 May 26 20:46 logs.txt
+drwxrwxr-x. 2 stein stein 41 Apr 28 10:15 myfirst
+drwxrwxr-x. 2 stein stein 24 May 12 16:44 youtube-dl
+[stein@super docker]$ 
+[stein@super docker]$ docker run -v `pwd`/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+^CClosing file
+[stein@super docker]$  ls -al logs.txt 
+-rw-rw-r--. 1 stein stein 90 May 26 20:46 logs.txt
+[stein@super docker]$ 
+[stein@super docker]$ cat logs.txt 
+Sun, 26 May 2019 17:46:37 GMT
+Sun, 26 May 2019 17:46:40 GMT
+Sun, 26 May 2019 17:46:43 GMT
+[stein@super docker]$ docker ps -a
+CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS                     PORTS               NAMES
+fbd1caeb6bcb        devopsdockeruh/first_volume_exercise   "node index"             15 seconds ago      Exited (0) 7 seconds ago                       frosty_chebyshev
+5d368b268b4b        youtube-dl                             "/usr/local/bin/yout…"   2 weeks ago         Exited (0) 2 weeks ago                         reverent_kirch
+1752797f2eef        myfirst                                "/bin/bash"              2 weeks ago         Exited (0) 13 days ago                         nervous_wescoff
+[stein@super docker]$ docker rm fbd 2e6
+fbd
+[stein@super docker]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                   PORTS               NAMES
+5d368b268b4b        youtube-dl          "/usr/local/bin/yout…"   2 weeks ago         Exited (0) 2 weeks ago                       reverent_kirch
+1752797f2eef        myfirst             "/bin/bash"              2 weeks ago         Exited (0) 13 days ago                       nervous_wescoff
+[stein@super docker]$ 
+

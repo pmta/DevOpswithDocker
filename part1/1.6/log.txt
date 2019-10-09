@@ -1,0 +1,370 @@
+stein@super:~/docker/1.6[stein@super 1.6]$ cat Dockerfile 
+FROM devopsdockeruh/overwrite_cmd_exercise
+
+stein@super:~/docker/1.6[stein@super 1.6]$ docker build .
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM devopsdockeruh/overwrite_cmd_exercise
+latest: Pulling from devopsdockeruh/overwrite_cmd_exercise
+ee79bb959ec00: Downloading [====e79bb959ec00: Downloading [=======================================>           ]  35.83MB/45.34MB07MB/4
+e79bb959ec00: Ee79bb959ec00: Extracting [=======================================e79bb959ec00: Pull complete MBe79bb959ec00: E==>  ]  M
+xtd4b7902036fe: Extracting [=d4b7902036fe: Extracting [=d4b7902036fe: Pull complete ==========d4b7902036fe: Extracting [=============4
+===========1b2a72d4e030: Extracting [=================================1b2a72d4e030: Pull complete /4.34MB1b2a72d4e030: Extracting]  786
+ [===d5d5d5d5d54db43011fd: Extracting [==================================================>]  50.07MB/50.07MBd54db43011fd: Pull co ]  49
+mplete 69d473365bb3: E69d473365bb3: E69d473365bb3: Extracting [==>                                                ]  10.58MB/215MB     
+669d69d69d473365bb3: E69d473365bb3: E69d473365bb3: Extracting [==================>                                ]   79.1MB/215MB     
+669d69d69d473365bb3: E69d473365bb3: E69d473365bb3: Extracting [=========================================>         ]  178.3MB/215MB=====
+669d473365bb3: E69d473365bb3: Extracting [==================================================>]    215MB/215MB69d473365bb3: Pull c====> 
+omplete 6e2490ee2dc8: Extracting [===================================6e2490ee2dc8: Pull complete .156kB6e2490ee2dc8: Extracting [108B
+====7272727ad86f629c: Extracting [==================================================>]  20.91MB/20.91MB727ad86f629c: Pull complet0.87MB
+e 23840d79cb44: Extract23840d79cb44: Extracting [==================================================>]  1.325MB/1.325MB23840d79cb4======
+4: Pull complete 4cfc73104030: Extracting [=============================4cfc73104030: Pull complete 108B/108B4cfc73104030: Extrac
+ting [====================68e8fecd059c: Pull complete ==>]     10868e8fecd059c: Extracting [===========================================
+=======>]  9.614k5746e9d6f35a: Extracting [==================================================>]     179B/179B5746e9d6f35a: Pull c
+omplete Digest: sha256:0c2a9eb2e7dc97e9217abbd13d6c45767cc09f7e82b7dce113fe2322161f38a6B/215MB
+Status: Downloaded newer image for devopsdockeruh/overwrite_cmd_exercise:latest
+ ---> 0f7f459b76c9
+Successfully built 0f7f459b76c9
+stein@super:~/docker/1.6[stein@super 1.6]$ docker images
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+devopsdockeruh/overwrite_cmd_exercise   latest              0f7f459b76c9        13 days ago         904MB
+stein@super:~/docker/1.6[stein@super 1.6]$ 
+stein@super:~/docker/1.6[stein@super 1.6]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+stein@super:~/docker/1.6[stein@super 1.6]$ docker run 0f7
+
+-h,       	--help           	to show this message
+-a [age], 	--adult [age]    	to check if you're older than 18
+-c [time],	--clock [time]   	to start a clock
+-t [size],	--triangle [size]	to draw a triangle, takes second argument as the size
+    
+stein@super:~/docker/1.6[stein@super 1.6]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+fd36a161b928        0f7                 "./start.sh"        14 seconds ago      Exited (0) 12 seconds ago                       tender_bhabha
+stein@super:~/docker/1.6[stein@super 1.6]$ docker inspect fd
+[
+    {
+        "Id": "fd36a161b92811efd63e515ee89c2a4b490215a3082452b40c3bfb05ea7bd9b8",
+        "Created": "2019-04-28T11:43:33.729509397Z",
+        "Path": "./start.sh",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2019-04-28T11:43:34.349557633Z",
+            "FinishedAt": "2019-04-28T11:43:34.472455199Z"
+        },
+        "Image": "sha256:0f7f459b76c9d96459487f12affaac3a5bda90c6b2b29e85d511220cc27bef5a",
+        "ResolvConfPath": "/var/lib/docker/containers/fd36a161b92811efd63e515ee89c2a4b490215a3082452b40c3bfb05ea7bd9b8/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/fd36a161b92811efd63e515ee89c2a4b490215a3082452b40c3bfb05ea7bd9b8/hostname",
+        "HostsPath": "/var/lib/docker/containers/fd36a161b92811efd63e515ee89c2a4b490215a3082452b40c3bfb05ea7bd9b8/hosts",
+        "LogPath": "/var/lib/docker/containers/fd36a161b92811efd63e515ee89c2a4b490215a3082452b40c3bfb05ea7bd9b8/fd36a161b92811efd63e515ee89c2
+a4b490215a3082452b40c3bfb05ea7bd9b8-json.log",
+        "Name": "/tender_bhabha",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "shareable",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DiskQuota": 0,
+            "KernelMemory": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": 0,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/00f8a8dfded2243628d956b0297d502e448b47384a579ddd58ad8104026b477f-init/diff:/var/lib/doc
+ker/overlay2/400807633ebde3e528f6a6db5c91ae34c2b8d23b97a0a8fff912f89fe75832c9/diff:/var/lib/docker/overlay2/90ee6854d8022d4d2a6b469f8b60335fc
+562fdd0781474104e7ff80b331a3bb9/diff:/var/lib/docker/overlay2/efcd2a675c75ed09ff13dd28011192a4df4a982ff0f2827ad112298d35c1fc96/diff:/var/lib/
+docker/overlay2/02d9c252d763b2b653ff7c07d98213959aa876a7cdf861c09654c11db976f5eb/diff:/var/lib/docker/overlay2/ad1ef26fd4c2fc16c86193047e2ec7
+b4ce77b6705d8c428302a507f66163c6fd/diff:/var/lib/docker/overlay2/90ca798addbc572eb05a80bb1d06e900f9bd247b64215a9a0f36de7b6c46727b/diff:/var/l
+ib/docker/overlay2/d454a3fdb55f00be560204eb546b08faac52b676f2be48b0e4521fd417b1e756/diff:/var/lib/docker/overlay2/9c0332bccb5399502674eff56a0
+ffb9693a76e4e6abfad7b09de629eb34c3d22/diff:/var/lib/docker/overlay2/71e37595dc9784447bff9f0d5fc440d2e7eb92f9f632be8d214a8dfd08e6c623/diff:/va
+r/lib/docker/overlay2/85a84cddfcd7150a6e04c2890ca798838a15c5041768e3863615ab23a82c23cd/diff:/var/lib/docker/overlay2/73dcf37387d535005136ad05
+056c364851faa4eb74b053df9126017585ed55c1/diff",
+                "MergedDir": "/var/lib/docker/overlay2/00f8a8dfded2243628d956b0297d502e448b47384a579ddd58ad8104026b477f/merged",
+                "UpperDir": "/var/lib/docker/overlay2/00f8a8dfded2243628d956b0297d502e448b47384a579ddd58ad8104026b477f/diff",
+                "WorkDir": "/var/lib/docker/overlay2/00f8a8dfded2243628d956b0297d502e448b47384a579ddd58ad8104026b477f/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "fd36a161b928",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=11.14.0",
+                "YARN_VERSION=1.15.2"
+            ],
+            "Cmd": null,
+            "ArgsEscaped": true,
+            "Image": "0f7",
+            "Volumes": null,
+            "WorkingDir": "/usr/app",
+            "Entrypoint": [
+                "./start.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "ba10446c49d5ac91531ef79fbfa7c681663e0281bfc2a9e53dc01c1d74468ca9",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/ba10446c49d5",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "804c4ca87359c85de35788838ef84a886024166330f20d12923ceee9d831464e",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+[stein@super 1.6]$
+[stein@super 1.6]$ cat Dockerfile 
+FROM devopsdockeruh/overwrite_cmd_exercise
+
+stein@super:~/docker/1.6[stein@super 1.6]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                          PORTS               NAMES
+fd36a161b928        0f7                 "./start.sh"        About a minute ago   Exited (0) About a minute ago                       tender_b
+habha
+stein@super:~/docker/1.6[stein@super 1.6]$ docker rm fd
+fd
+stein@super:~/docker/1.6[stein@super 1.6]$ docker rmi 0f7
+Untagged: devopsdockeruh/overwrite_cmd_exercise:latest
+Untagged: devopsdockeruh/overwrite_cmd_exercise@sha256:0c2a9eb2e7dc97e9217abbd13d6c45767cc09f7e82b7dce113fe2322161f38a6
+Deleted: sha256:0f7f459b76c9d96459487f12affaac3a5bda90c6b2b29e85d511220cc27bef5a
+Deleted: sha256:facdef1f84afa3dc00163fcdad22326d48236b31df13fbd911f27b310dcef039
+Deleted: sha256:cdcd5588834167c819f6d6fd4c46202340e2396102aa90eb3462f1c11cb0ae5e
+Deleted: sha256:1a0650bd613b1fc50961305d5f16f36e51914d1d4edd980d2a8db63e65373aea
+Deleted: sha256:a8f5fb11ff953e73758be8c6fff1ee6aa7c20794a578b947acf984e43f861824
+Deleted: sha256:844e0239b394b7aa3a8e27d5a95daa44ca8def59f589e9003a8184e0071c2624
+Deleted: sha256:20f9d797572b67b18de9a32ea4b3048ff9a1b219cbb5321fd565745dbf9e203c
+Deleted: sha256:09798890afdc89e906b235b5eb538dd1c03e3a86ce799371ce5d2f7fb6a34951
+Deleted: sha256:cfac9ecfbc0042ad5d839aff41adba39d65684c7e15af9f66d237dc03d1fd60b
+Deleted: sha256:f352c02ab6c1704fd1cac057d122c71ab8d059dcbf433068ad7c88c6d7771a43
+Deleted: sha256:b9c3b217e735278337071985f35849d0864facfcc5d01884910980b895e03f77
+Deleted: sha256:fbb641a8b94349e89886f65d79928e4673530e2a2b4d33c2c95e0426713f78e4
+stein@super:~/docker/1.6[stein@super 1.6]$ 
+
+stein@super:~/docker/1.6[stein@super 1.6]$ cat Dockerfile 
+FROM devopsdockeruh/overwrite_cmd_exercise
+
+CMD ["-c 0"]
+
+stein@super:~/docker/1.6[stein@super 1.6]$ 
+stein@super:~/docker/1.6[stein@super 1.6]$ docker build -t docker-clock .
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise
+latest: Pulling from devopsdockeruh/overwrite_cmd_exercise
+e79bbe79bb959ec00: Downloading [================>                       e79bb959ec00: Downloading [======================>            
+e79bb959ec00: Downloading [=======================>           e79bb959ec00: Downloading [====e79bb959ec00: Downloading [==============
+===========>                         ]  23.42MB/45.34MB                ]  22.96MB/45.34MB    1b2a72d4e030: Down
+e79bb959ec00: Downloading [==========================>   e79bb959ec00: Downloading [===========================>                      
+ ]  24.82MB/45.34MB==================>                        ]  24.35MB/45.e79bb959ec00: Downloading [===========================>    
+                    ]  25.28MB/45.34MBing [=============e79bb959ec00: Downloading [============================>                       
+]  25.74MB/45.34MBloading [==========d54db43011fd: Downloading [===========e79bb959ec00: Downloading [============================>   M
+                   ]   26.2MB/45.34MB=======>                                 ]  17.79MB/50.07MBe79bb959ec00: Downloading [=========== 
+==================>                     ]  26.66MB/45.34MB                    ]   18.3MB/50.07MB             e79bb959ec00: DownlMB     
+oadine79be79bb959ec00: Extracting [=====>                                 e79bb959ec00: Extracting [========>                          
+                 ]   7.34MB/45.3e79bb959ec00: Extracting [==============>                                    ]   13.3MB/45.34MB ====   
+              ]  11.01MB/45.34MB4MBn69d473365bb3: Downloading [===============================d54db43011fd: Downloading [==============
+e79bbe79bb959ec00: Extracting [=e79bb959ec00: Extracting [=====================================>             ]  34.41MB/45.34MB=====>==
+e79bb959ece79bb959ec00: Extracting [=======================================e79bb959ec00: Pull complete MBe79bb959ec00: Extrac]  43.58] 
+d4b7902036fe: Extractingd4b7902036fe: Extracting [=d4b7902036fe: Pull complete ==========d4b7902036fe: Extracting [==================  
+======1b2a72d4e030: Extracting [=================================1b2a72d4e030: Pull complete /4.34MB1b2a72d4e030: Extracting [===983kB/
+d5d5d5d5d54db43011fd: Extracting [==================================================>]  50.07MB/50.07MBd54db43011fd: Pull complet9.81MB
+e 69d69d69d473365bb3: E69d473365bb3: E69d473365bb3: Extracting [========>                                          ]  38.44MB/215MB    
+6969d69d69d473365bb3: E69d473365bb3: E69d473365bb3: Extracting [==========================>                        ]  115.9MB/215MB=>  
+6969d69d69d473365bb3: E69d473365bb3: E69d473365bb3: Extracting [================================================>  ]  210.6MB/215MB====
+69d473365bb69d473365bb3: Extracting [===============================69d473365bb3: Pull complete MB/215MB69d473365bb3: Extracting  ]  21
+[=====================6e2490ee2dc8: Pull complete =>]    215MB6e2490ee2dc8: Extracting [===============================================
+===>]  4.156kB/4727ad86f629c: Extract727ad86f629c: Extracting [=================>                                 ]  7.111MB/20.91MB   
+7727ad86f629c: Extracting [===================================727ad86f629c: Pull complete 0.91MB727ad86f629c: Extracting [=======20.91M
+================23840d79cb44: Extracting [===================================23840d79cb44: Pull complete .325MB23840d79cb44: Extr    ] 
+acting [=================4cfc73104030: Pull complete =====>]  1.325M4cfc73104030: Extracting [=========================================
+=========>]     10868e8fecd059c: Extracting [==================================================>]  9.614kB/9.614kB68e8fecd059c: P
+ull complete 5746e9d6f35a: Extracting [=============================5746e9d6f35a: Pull complete 179B/179B5746e9d6f35a: Extracting
+ [==================================================>]     179B/179B                            Digest: sha256:0c2a9eb2e7dc97e9217ab
+bd13d6c45767cc09f7e82b7dce113fe2322161f38a6
+Status: Downloaded newer image for devopsdockeruh/overwrite_cmd_exercise:latest
+ ---> 0f7f459b76c9
+Step 2/2 : CMD ["-c 0"]
+ ---> Running in 47f29386e008
+Removing intermediate container 47f29386e008
+ ---> b4315798f765
+Successfully built b4315798f765
+Successfully tagged docker-clock:latest
+stein@super:~/docker/1.6[stein@super 1.6]$ docker run docker-clock
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+stein@super:~/docker/1.6[stein@super 1.6]$ 
+
+
+[stein@super ~]$ docker ps
+CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS              PORTS               NAMES
+cfd192dcd51e        docker-clock        "./start.sh '-c 0'"   29 seconds ago      Up 28 seconds                           affectionate_yalow
+[stein@super ~]$ docker stop -t 0 cfd
+cfd
+[stein@super ~]$ 
+

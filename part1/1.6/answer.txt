@@ -1,0 +1,37 @@
+[stein@super 1.6]$ cat Dockerfile                                                                                                            
+FROM devopsdockeruh/overwrite_cmd_exercise
+                                                                                                            
+[stein@super 1.6]$ docker build .
+:
+Successfully built 0f7f459b76c9                                                                                                   
+
+[stein@super 1.6]$ docker run 0f7  
+                                                                                                                                             
+-h,             --help                  to show this message                                                                                 
+-a [age],       --adult [age]           to check if you're older than 18                                                                     
+-c [time],      --clock [time]          to start a clock                                                                                     
+-t [size],      --triangle [size]       to draw a triangle, takes second argument as the size                                                
+                                                                                                                                             
+[stein@super 1.6]$
+
+# Edit Dockerfile
+
+[stein@super 1.6]$ cat Dockerfile  
+FROM devopsdockeruh/overwrite_cmd_exercise  
+                                                                                                                                             
+CMD ["-c 0"]                                                                                                                                 
+                                                                                                                                             
+[stein@super 1.6]$
+
+                                                                                                              
+[stein@super 1.6]$ docker build -t docker-clock .
+:
+Successfully built b4315798f765
+Successfully tagged docker-clock:latest
+
+[stein@super 1.6]$ docker run docker-clock
+1
+2
+3
+:
+

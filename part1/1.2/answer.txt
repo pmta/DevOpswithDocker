@@ -1,0 +1,6 @@
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[stein@super ~]$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[stein@super ~]$ 
+

@@ -1,0 +1,24 @@
+docker build -t backend-example .
+touch logs.txt
+docker run -v `pwd`/logs.txt:/backend-example-docker/logs.txt -d -p 8000:8000 backend-example
+[stein@i7 1.11]$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+893cf1acbacf        backend-example     "npm start"              58 seconds ago      Up 56 seconds       0.0.0.0:8000->8000/tcp   focused_ellis
+
+
+[stein@i7 1.11]$ curl http://localhost:8000 
+Port configured correctly, generated message in logs.txt[stein@i7 1.11]$ 
+[stein@i7 1.11]$ 
+
+[stein@i7 1.11]$ cat logs.txt 
+6/2/2019, 9:45:12 PM: Connection received in root
+[stein@i7 1.11]$ 
+
+[stein@i7 1.11]$ curl http://localhost:8000 
+Port configured correctly, generated message in logs.txt[stein@i7 1.11]$ 
+[stein@i7 1.11]$ 
+[stein@i7 1.11]$ cat logs.txt 
+6/2/2019, 9:45:12 PM: Connection received in root
+6/2/2019, 9:45:20 PM: Connection received in root
+[stein@i7 1.11]$ 
+

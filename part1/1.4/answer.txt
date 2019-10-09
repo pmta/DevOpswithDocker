@@ -1,0 +1,26 @@
+[stein@super ~]$ docker run --sig-proxy=false devopsdockeruh/exec_bash_exercise
+:
+Status: Downloaded newer image for devopsdockeruh/exec_bash_exercise:latest
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+^C
+
+[stein@super ~]$ docker ps -a
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
+8bac524da054        devopsdockeruh/exec_bash_exercise   "node index"        13 seconds ago      Up 8 seconds                            hopeful_galileo
+
+[stein@super ~]$ docker exec -it 8ba bash
+root@8bac524da054:/usr/app# tail -f ./logs.txt 
+Fri, 19 Apr 2019 16:32:06 GMT
+Fri, 19 Apr 2019 16:32:09 GMT
+Secret message is:
+"Docker is easy"
+Fri, 19 Apr 2019 16:32:15 GMT
+^C
+root@8bac524da054:/usr/app# exit
+exit
+[stein@super ~]$ 
+
+Secret message is: "Docker is easy"
+
