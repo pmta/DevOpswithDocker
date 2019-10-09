@@ -1,0 +1,35 @@
+Container with Anaconda Distribution.
+
+https://hub.docker.com/r/pmta/anaconda3
+
+Sources at https://github.com/pmta/anaconda3
+
+By default when run with:
+# docker run pmta/anaconda3 
+
+Which logs URL such as:
+:
+Or copy and paste one of these URLs:
+        http://172.17.0.2:8889/?token=cbfbf9ff2092188bfb98018444fe46a9fe69ba537a611ec5
+:
+
+Using the generated URL, Jupyter environment can be connected with web browser to run Jupyter notebooks.
+Example notebook "notebooks/RecurrentNetworks.ipynb" included for testing.
+The RecurrentNetworks.ipynb can be opened with web browser from "notebooks" folder and run from menu "Cell" -> "Run All".
+
+Note running the playbook takes rather long. It can be stopped from menu "Kernel" -> "Interrupt".
+(The notebook itself tries to use recurrent networks for text generation.)
+
+
+The container can be used as interactive python environment if run as:
+# docker run -it anaconda3 ipython3
+
+The container has Anaconda "package manager" called "conda" which can be used
+to install additional  packages/libraries to Anaconda environment.
+
+For example to install pytorch:
+# docker run -it pmta/anaconda3 conda install pytorch
+
+Refer to project README for more details and the folder "/home/$user/.local/bin/" inside the 
+container for available tools.
+
