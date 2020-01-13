@@ -1,0 +1,130 @@
+[stein@i7 2.6]$ docker-compose up 
+Creating backend_db  ... done
+Creating redis-cache ... done
+Creating frontend    ... done
+Creating backend     ... done
+Attaching to redis-cache, backend_db, frontend, backend
+redis-cache    | 1:C 13 Jan 2020 21:52:40.733 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-cache    | 1:C 13 Jan 2020 21:52:40.733 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-cache    | 1:C 13 Jan 2020 21:52:40.733 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-cache    | 1:M 13 Jan 2020 21:52:40.735 * Running mode=standalone, port=6379.
+backend_db     | The files belonging to this database system will be owned by user "postgres".
+backend_db     | This user must also own the server process.
+backend_db     | 
+redis-cache    | 1:M 13 Jan 2020 21:52:40.735 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+redis-cache    | 1:M 13 Jan 2020 21:52:40.735 # Server initialized
+redis-cache    | 1:M 13 Jan 2020 21:52:40.735 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+redis-cache    | 1:M 13 Jan 2020 21:52:40.735 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+backend_db     | The database cluster will be initialized with locale "en_US.utf8".
+backend_db     | The default database encoding has accordingly been set to "UTF8".
+backend_db     | The default text search configuration will be set to "english".
+backend_db     | 
+backend_db     | Data page checksums are disabled.
+redis-cache    | 1:M 13 Jan 2020 21:52:40.736 * Ready to accept connections
+backend_db     | 
+backend_db     | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+backend_db     | creating subdirectories ... ok
+backend_db     | selecting dynamic shared memory implementation ... posix
+backend_db     | selecting default max_connections ... 100
+backend_db     | selecting default shared_buffers ... 128MB
+backend_db     | selecting default time zone ... Etc/UTC
+backend_db     | creating configuration files ... ok
+backend_db     | running bootstrap script ... ok
+frontend       | INFO: Accepting connections at http://localhost:5000
+backend        | 
+backend        | > backend-example-docker@1.0.0 start /backend-example-docker
+backend        | > cross-env NODE_ENV=production node index.js
+backend        | 
+backend_db     | performing post-bootstrap initialization ... ok
+backend        | Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
+backend_db     | syncing data to disk ... initdb: warning: enabling "trust" authentication for local connections
+backend_db     | You can change this by editing pg_hba.conf or using the option -A, or
+backend_db     | --auth-local and --auth-host, the next time you run initdb.
+backend_db     | ok
+backend_db     | 
+backend_db     | 
+backend_db     | Success. You can now start the database server using:
+backend_db     | 
+backend_db     |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+backend_db     | 
+backend_db     | waiting for server to start....2020-01-13 21:52:42.839 UTC [46] LOG:  starting PostgreSQL 12.1 (Debian 12.1-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+backend_db     | 2020-01-13 21:52:42.873 UTC [46] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+backend_db     | 2020-01-13 21:52:43.016 UTC [47] LOG:  database system was shut down at 2020-01-13 21:52:41 UTC
+backend_db     | 2020-01-13 21:52:43.037 UTC [46] LOG:  database system is ready to accept connections
+backend_db     |  done
+backend_db     | server started
+backend        | Mon, 13 Jan 2020 21:52:43 GMT sequelize deprecated String based operators are now deprecated. Please use Symbol based operators for better security, read more at http://docs.sequelizejs.com/manual/tutorial/querying.html#operators at node_modules/sequelize/lib/sequelize.js:242:13
+backend        | Testing database connection
+backend        | Redis connection, initating..
+backend        | Trying to set cache
+backend        | Cache set successfully
+backend        | Started on port 8000
+backend        | { SequelizeConnectionRefusedError: connect ECONNREFUSED 192.168.80.3:5432
+backend        |     at connection.connect.err (/backend-example-docker/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:116:24)
+backend        |     at Connection.connectingErrorHandler (/backend-example-docker/node_modules/pg/lib/client.js:140:14)
+backend        |     at Connection.emit (events.js:198:13)
+backend        |     at Socket.reportStreamError (/backend-example-docker/node_modules/pg/lib/connection.js:71:10)
+backend        |     at Socket.emit (events.js:198:13)
+backend        |     at emitErrorNT (internal/streams/destroy.js:91:8)
+backend        |     at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+backend        |     at process._tickCallback (internal/process/next_tick.js:63:19)
+backend        |   name: 'SequelizeConnectionRefusedError',
+backend        |   parent:
+backend        |    { Error: connect ECONNREFUSED 192.168.80.3:5432
+backend        |        at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+backend        |      errno: 'ECONNREFUSED',
+backend        |      code: 'ECONNREFUSED',
+backend        |      syscall: 'connect',
+backend        |      address: '192.168.80.3',
+backend        |      port: 5432 },
+backend        |   original:
+backend        |    { Error: connect ECONNREFUSED 192.168.80.3:5432
+backend        |        at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+backend        |      errno: 'ECONNREFUSED',
+backend        |      code: 'ECONNREFUSED',
+backend        |      syscall: 'connect',
+backend        |      address: '192.168.80.3',
+backend        |      port: 5432 } } 'Connection to database database failed, tries left' 5 'trying again in' 3 'seconds'
+backend_db     | CREATE DATABASE
+backend_db     | 
+backend_db     | 
+backend_db     | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+backend_db     | 
+backend_db     | waiting for server to shut down...2020-01-13 21:52:43.781 UTC [46] LOG:  received fast shutdown request
+backend_db     | .2020-01-13 21:52:43.827 UTC [46] LOG:  aborting any active transactions
+backend_db     | 2020-01-13 21:52:43.829 UTC [46] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+backend_db     | 2020-01-13 21:52:43.829 UTC [48] LOG:  shutting down
+backend_db     | 2020-01-13 21:52:43.990 UTC [46] LOG:  database system is shut down
+backend_db     |  done
+backend_db     | server stopped
+backend_db     | 
+backend_db     | PostgreSQL init process complete; ready for start up.
+backend_db     | 
+backend_db     | 2020-01-13 21:52:44.128 UTC [1] LOG:  starting PostgreSQL 12.1 (Debian 12.1-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+backend_db     | 2020-01-13 21:52:44.128 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+backend_db     | 2020-01-13 21:52:44.128 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+backend_db     | 2020-01-13 21:52:44.178 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+backend_db     | 2020-01-13 21:52:44.277 UTC [64] LOG:  database system was shut down at 2020-01-13 21:52:43 UTC
+backend_db     | 2020-01-13 21:52:44.307 UTC [1] LOG:  database system is ready to accept connections
+backend        | Testing database connection
+backend        | Executing (default): SELECT 1+1 AS result
+backend        | Connection ok, syncing database with model.
+backend        | Executing (default): CREATE TABLE IF NOT EXISTS "messages" ("id"   SERIAL , "body" VARCHAR(255), "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+backend        | Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'messages' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+backend        | Database connection established!
+backend        | Executing (default): INSERT INTO "messages" ("id","body","createdAt","updatedAt") VALUES (DEFAULT,'Hello','2020-01-13 21:54:29.316 +00:00','2020-01-13 21:54:29.316 +00:00') RETURNING *;
+backend        | Executing (default): INSERT INTO "messages" ("id","body","createdAt","updatedAt") VALUES (DEFAULT,'Hello anyone there?','2020-01-13 21:54:44.177 +00:00','2020-01-13 21:54:44.177 +00:00') RETURNING *;
+backend        | Executing (default): INSERT INTO "messages" ("id","body","createdAt","updatedAt") VALUES (DEFAULT,'Jiihaa','2020-01-13 21:54:51.766 +00:00','2020-01-13 21:54:51.766 +00:00') RETURNING *;
+backend        | Executing (default): SELECT "id", "body", "createdAt", "updatedAt" FROM "messages" AS "message";
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping backend     ... done
+Stopping frontend    ... done
+Stopping backend_db  ... done
+Stopping redis-cache ... done
+[stein@i7 2.6]$ docker-compose down
+Removing backend     ... done
+Removing frontend    ... done
+Removing backend_db  ... done
+Removing redis-cache ... done
+Removing network 26_default
+[stein@i7 2.6]$ 
