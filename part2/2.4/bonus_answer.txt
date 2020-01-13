@@ -1,0 +1,24 @@
+Bonus / alternative solution
+Mody the compute on docker compose an add replicas as follows:
+#  compute:
+#      build: ./compute
+#      image: compute
+#      deploy:
+#        replicas: 2
+#      environment:
+#        - VIRTUAL_HOST=compute.localtest.me
+
+and run
+docker-compose --compatibility up
+
+
+The docker-compose file reference version 3 lists "deploy" effective when deploying to swarm or with docker stack deploy.
+And claims deploy is ignored by docker-compose up. However with --compatibility  option docker-compose up seems to work also.
+
+# https://docs.docker.com/compose/compose-file/
+
+Section "deploy"
+# Specify configuration related to the deployment and running of services. This only takes 
+# effect when deploying to a swarm with docker stack deploy, and is ignored by 
+# docker-compose up and docker-compose run.
+

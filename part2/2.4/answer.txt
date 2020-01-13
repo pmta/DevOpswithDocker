@@ -1,0 +1,19 @@
+
+# Scale num of computes up:
+docker-compose up --scale compute=2
+
+
+# Bonus / alternative solution
+# Mody the compute on docker compose an add replicas as follows:
+#  compute:
+#      build: ./compute
+#      image: compute
+#      deploy:
+#        replicas: 2
+#      environment:
+#        - VIRTUAL_HOST=compute.localtest.me
+
+# and run 
+docker-compose --compatibility up 
+
+
