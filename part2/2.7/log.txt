@@ -1,0 +1,158 @@
+[stein@i7 2.7]$ docker-compose up
+Creating network "27_default" with the default driver
+Creating 27_kurkkumopo-frontend_1 ... done
+Creating 27_kurkkumopo-backend_1  ... done
+Creating 27_kurkkumopo-training_1 ... done
+Attaching to 27_kurkkumopo-frontend_1, 27_kurkkumopo-training_1, 27_kurkkumopo-backend_1
+kurkkumopo-frontend_1  | INFO: Accepting connections at http://localhost:3000
+kurkkumopo-training_1  | Using TensorFlow backend.
+kurkkumopo-training_1  | gathering cucumbers...
+kurkkumopo-backend_1   | Using TensorFlow backend.
+kurkkumopo-backend_1   | Backend starting
+kurkkumopo-backend_1   | No 'kurkkumopotin.sav' model in the model volume. Waiting for training service to provide one.
+kurkkumopo-training_1  | gathering mopeds...
+kurkkumopo-training_1  | Epoch 1/5
+kurkkumopo-training_1  | 2020-01-13 22:31:52.963399: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+kurkkumopo-training_1  | 
+kurkkumopo-training_1  |  128/1054 [==>...........................] - ETA: 12s - loss: 0.7396 - acc: 0.5156
+kurkkumopo-training_1  |  256/1054 [======>.......................] - ETA: 8s - loss: 0.6908 - acc: 0.5781 
+kurkkumopo-training_1  |  384/1054 [=========>....................] - ETA: 6s - loss: 0.6381 - acc: 0.6380
+kurkkumopo-training_1  |  512/1054 [=============>................] - ETA: 5s - loss: 0.6220 - acc: 0.6816
+kurkkumopo-training_1  |  640/1054 [=================>............] - ETA: 3s - loss: 0.8104 - acc: 0.6672
+kurkkumopo-training_1  |  768/1054 [====================>.........] - ETA: 2s - loss: 0.7577 - acc: 0.6862
+kurkkumopo-training_1  |  896/1054 [========================>.....] - ETA: 1s - loss: 0.7437 - acc: 0.6964
+kurkkumopo-training_1  | 1024/1054 [============================>.] - ETA: 0s - loss: 0.7107 - acc: 0.7090
+kurkkumopo-training_1  | 1054/1054 [==============================] - 10s 9ms/step - loss: 0.7019 - acc: 0.7116
+kurkkumopo-training_1  | Epoch 2/5
+kurkkumopo-training_1  | 
+kurkkumopo-training_1  |  128/1054 [==>...........................] - ETA: 8s - loss: 0.3873 - acc: 0.8516
+kurkkumopo-training_1  |  256/1054 [======>.......................] - ETA: 7s - loss: 0.2890 - acc: 0.8906
+kurkkumopo-training_1  |  384/1054 [=========>....................] - ETA: 5s - loss: 0.3071 - acc: 0.8854
+kurkkumopo-training_1  |  512/1054 [=============>................] - ETA: 4s - loss: 0.3295 - acc: 0.8652
+kurkkumopo-training_1  |  640/1054 [=================>............] - ETA: 3s - loss: 0.3503 - acc: 0.8656
+kurkkumopo-training_1  |  768/1054 [====================>.........] - ETA: 2s - loss: 0.3477 - acc: 0.8620
+kurkkumopo-training_1  |  896/1054 [========================>.....] - ETA: 1s - loss: 0.3359 - acc: 0.8739
+kurkkumopo-training_1  | 1024/1054 [============================>.] - ETA: 0s - loss: 0.3163 - acc: 0.8799
+kurkkumopo-training_1  | 1054/1054 [==============================] - 9s 9ms/step - loss: 0.3131 - acc: 0.8814
+kurkkumopo-training_1  | Epoch 3/5
+kurkkumopo-training_1  | 
+kurkkumopo-training_1  |  128/1054 [==>...........................] - ETA: 8s - loss: 0.3602 - acc: 0.8281
+kurkkumopo-training_1  |  256/1054 [======>.......................] - ETA: 6s - loss: 0.3185 - acc: 0.8789
+kurkkumopo-training_1  |  384/1054 [=========>....................] - ETA: 5s - loss: 0.2970 - acc: 0.8932
+kurkkumopo-training_1  |  512/1054 [=============>................] - ETA: 4s - loss: 0.2752 - acc: 0.9004
+kurkkumopo-training_1  |  640/1054 [=================>............] - ETA: 3s - loss: 0.2539 - acc: 0.9094
+kurkkumopo-training_1  |  768/1054 [====================>.........] - ETA: 2s - loss: 0.2334 - acc: 0.9154
+kurkkumopo-training_1  |  896/1054 [========================>.....] - ETA: 1s - loss: 0.2168 - acc: 0.9230
+kurkkumopo-training_1  | 1024/1054 [============================>.] - ETA: 0s - loss: 0.2081 - acc: 0.9277
+kurkkumopo-training_1  | 1054/1054 [==============================] - 9s 9ms/step - loss: 0.2075 - acc: 0.9279
+kurkkumopo-training_1  | Epoch 4/5
+kurkkumopo-training_1  | 
+kurkkumopo-training_1  |  128/1054 [==>...........................] - ETA: 8s - loss: 0.3318 - acc: 0.8359
+kurkkumopo-training_1  |  256/1054 [======>.......................] - ETA: 6s - loss: 0.2531 - acc: 0.8906
+kurkkumopo-training_1  |  384/1054 [=========>....................] - ETA: 5s - loss: 0.2164 - acc: 0.9089
+kurkkumopo-training_1  |  512/1054 [=============>................] - ETA: 4s - loss: 0.2010 - acc: 0.9219
+kurkkumopo-training_1  |  640/1054 [=================>............] - ETA: 3s - loss: 0.1973 - acc: 0.9250
+kurkkumopo-training_1  |  768/1054 [====================>.........] - ETA: 2s - loss: 0.2006 - acc: 0.9232
+kurkkumopo-training_1  |  896/1054 [========================>.....] - ETA: 1s - loss: 0.2030 - acc: 0.9230
+kurkkumopo-training_1  | 1024/1054 [============================>.] - ETA: 0s - loss: 0.2248 - acc: 0.9150
+kurkkumopo-training_1  | 1054/1054 [==============================] - 9s 8ms/step - loss: 0.2493 - acc: 0.9099
+kurkkumopo-training_1  | Epoch 5/5
+kurkkumopo-training_1  | 
+kurkkumopo-training_1  |  128/1054 [==>...........................] - ETA: 7s - loss: 0.3308 - acc: 0.8750
+kurkkumopo-training_1  |  256/1054 [======>.......................] - ETA: 6s - loss: 0.2349 - acc: 0.9062
+kurkkumopo-training_1  |  384/1054 [=========>....................] - ETA: 5s - loss: 0.2090 - acc: 0.9141
+kurkkumopo-training_1  |  512/1054 [=============>................] - ETA: 4s - loss: 0.2051 - acc: 0.9219
+kurkkumopo-training_1  |  640/1054 [=================>............] - ETA: 3s - loss: 0.1957 - acc: 0.9250
+kurkkumopo-training_1  |  768/1054 [====================>.........] - ETA: 2s - loss: 0.1811 - acc: 0.9323
+kurkkumopo-training_1  |  896/1054 [========================>.....] - ETA: 1s - loss: 0.1691 - acc: 0.9353
+kurkkumopo-training_1  | 1024/1054 [============================>.] - ETA: 0s - loss: 0.1639 - acc: 0.9355
+kurkkumopo-training_1  | 1054/1054 [==============================] - 9s 8ms/step - loss: 0.1627 - acc: 0.9355
+kurkkumopo-training_1  | 
+kurkkumopo-training_1  |  32/520 [>.............................] - ETA: 2s
+kurkkumopo-training_1  |  64/520 [==>...........................] - ETA: 1s
+kurkkumopo-training_1  |  96/520 [====>.........................] - ETA: 1s
+kurkkumopo-training_1  | 128/520 [======>.......................] - ETA: 1s
+kurkkumopo-training_1  | 160/520 [========>.....................] - ETA: 1s
+kurkkumopo-training_1  | 192/520 [==========>...................] - ETA: 0s
+kurkkumopo-training_1  | 224/520 [===========>..................] - ETA: 0s
+kurkkumopo-training_1  | 256/520 [=============>................] - ETA: 0s
+kurkkumopo-training_1  | 288/520 [===============>..............] - ETA: 0s
+kurkkumopo-training_1  | 320/520 [=================>............] - ETA: 0s
+kurkkumopo-training_1  | 352/520 [===================>..........] - ETA: 0s
+kurkkumopo-training_1  | 384/520 [=====================>........] - ETA: 0s
+kurkkumopo-training_1  | 416/520 [=======================>......] - ETA: 0s
+kurkkumopo-training_1  | 448/520 [========================>.....] - ETA: 0s
+kurkkumopo-training_1  | 480/520 [==========================>...] - ETA: 0s
+kurkkumopo-training_1  | 512/520 [============================>.] - ETA: 0s
+kurkkumopo-training_1  | 520/520 [==============================] - 1s 3ms/step
+27_kurkkumopo-training_1 exited with code 0
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3976: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:131: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | 2020-01-13 22:32:41.827207: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+kurkkumopo-backend_1   | 2020-01-13 22:32:41.851456: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2398560000 Hz
+kurkkumopo-backend_1   | 2020-01-13 22:32:41.854098: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55cc0dc46970 executing computations on platform Host. Devices:
+kurkkumopo-backend_1   | 2020-01-13 22:32:41.854146: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+kurkkumopo-backend_1   | 2020-01-13 22:32:41.959608: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+kurkkumopo-backend_1   | Instructions for updating:
+kurkkumopo-backend_1   | Use tf.where in 2.0, which has the same broadcast rule as np.where
+kurkkumopo-backend_1   |  * Serving Flask app "app" (lazy loading)
+kurkkumopo-backend_1   |  * Environment: production
+kurkkumopo-backend_1   |    WARNING: Do not use the development server in a production environment.
+kurkkumopo-backend_1   |    Use a production WSGI server instead.
+kurkkumopo-backend_1   |  * Debug mode: on
+kurkkumopo-backend_1   |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+kurkkumopo-backend_1   |  * Restarting with stat
+kurkkumopo-backend_1   | Using TensorFlow backend.
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3976: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:131: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | 2020-01-13 22:32:44.893193: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+kurkkumopo-backend_1   | 2020-01-13 22:32:44.916466: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2398560000 Hz
+kurkkumopo-backend_1   | 2020-01-13 22:32:44.918927: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55e2574d2610 executing computations on platform Host. Devices:
+kurkkumopo-backend_1   | 2020-01-13 22:32:44.918974: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+kurkkumopo-backend_1   | 2020-01-13 22:32:45.023801: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+kurkkumopo-backend_1   | 
+kurkkumopo-backend_1   | WARNING:tensorflow:From /usr/local/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+kurkkumopo-backend_1   | Instructions for updating:
+kurkkumopo-backend_1   | Use tf.where in 2.0, which has the same broadcast rule as np.where
+kurkkumopo-backend_1   |  * Debugger is active!
+kurkkumopo-backend_1   |  * Debugger PIN: 113-461-280
+kurkkumopo-backend_1   | /usr/local/lib/python3.6/site-packages/scipy/misc/pilutil.py:482: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
+kurkkumopo-backend_1   |   if issubdtype(ts, int):
+kurkkumopo-backend_1   | /usr/local/lib/python3.6/site-packages/scipy/misc/pilutil.py:485: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+kurkkumopo-backend_1   |   elif issubdtype(type(size), float):
+kurkkumopo-backend_1   | 192.168.192.1 - - [13/Jan/2020 22:35:16] "POST /kurkkuvaimopo HTTP/1.1" 200 -
+kurkkumopo-backend_1   | 192.168.192.1 - - [13/Jan/2020 22:35:25] "POST /kurkkuvaimopo HTTP/1.1" 200 -
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping 27_kurkkumopo-backend_1  ... done
+Stopping 27_kurkkumopo-frontend_1 ... done
+[stein@i7 2.7]$ docker-compose down
+Removing 27_kurkkumopo-backend_1  ... done
+Removing 27_kurkkumopo-training_1 ... done
+Removing 27_kurkkumopo-frontend_1 ... done
+Removing network 27_default
+[stein@i7 2.7]$ 
+
