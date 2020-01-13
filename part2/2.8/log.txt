@@ -1,0 +1,72 @@
+[stein@i7 2.8]$ docker-compose up
+Starting redis-cache ... done
+Starting frontend    ... done
+Starting backend_db  ... done
+Starting proxy       ... done
+Starting backend     ... done
+Attaching to frontend, redis-cache, backend_db, proxy, backend
+redis-cache    | 1:C 13 Jan 2020 23:02:47.915 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-cache    | 1:C 13 Jan 2020 23:02:47.915 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-cache    | 1:C 13 Jan 2020 23:02:47.915 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+frontend       | INFO: Accepting connections at http://localhost:5000
+proxy          | Custom dhparam.pem file found, generation skipped
+proxy          | forego     | starting dockergen.1 on port 5000
+redis-cache    | 1:M 13 Jan 2020 23:02:47.917 * Running mode=standalone, port=6379.
+redis-cache    | 1:M 13 Jan 2020 23:02:47.917 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+redis-cache    | 1:M 13 Jan 2020 23:02:47.917 # Server initialized
+backend_db     | 
+backend_db     | PostgreSQL Database directory appears to contain a database; Skipping initialization
+backend_db     | 
+redis-cache    | 1:M 13 Jan 2020 23:02:47.917 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+proxy          | forego     | starting nginx.1 on port 5100
+backend_db     | 2020-01-13 23:02:48.287 UTC [1] LOG:  starting PostgreSQL 12.1 (Debian 12.1-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+backend_db     | 2020-01-13 23:02:48.288 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+backend_db     | 2020-01-13 23:02:48.288 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+redis-cache    | 1:M 13 Jan 2020 23:02:47.917 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+backend_db     | 2020-01-13 23:02:48.371 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+backend_db     | 2020-01-13 23:02:48.464 UTC [26] LOG:  database system was shut down at 2020-01-13 23:02:33 UTC
+redis-cache    | 1:M 13 Jan 2020 23:02:47.918 * DB loaded from disk: 0.000 seconds
+redis-cache    | 1:M 13 Jan 2020 23:02:47.918 * Ready to accept connections
+backend_db     | 2020-01-13 23:02:48.500 UTC [1] LOG:  database system is ready to accept connections
+proxy          | dockergen.1 | 2020/01/13 23:02:48 Contents of /etc/nginx/conf.d/default.conf did not change. Skipping notification 'nginx -s reload'
+proxy          | dockergen.1 | 2020/01/13 23:02:48 Watching docker events
+proxy          | dockergen.1 | 2020/01/13 23:02:48 Contents of /etc/nginx/conf.d/default.conf did not change. Skipping notification 'nginx -s reload'
+backend        | 
+backend        | > backend-example-docker@1.0.0 start /backend-example-docker
+backend        | > cross-env NODE_ENV=production node index.js
+backend        | 
+backend        | Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
+backend        | Mon, 13 Jan 2020 23:02:50 GMT sequelize deprecated String based operators are now deprecated. Please use Symbol based operators for better security, read more at http://docs.sequelizejs.com/manual/tutorial/querying.html#operators at node_modules/sequelize/lib/sequelize.js:242:13
+backend        | Testing database connection
+backend        | Redis connection, initating..
+backend        | Trying to set cache
+backend        | Cache set successfully
+backend        | Started on port 8000
+backend        | Executing (default): SELECT 1+1 AS result
+backend        | Connection ok, syncing database with model.
+backend        | Executing (default): CREATE TABLE IF NOT EXISTS "messages" ("id"   SERIAL , "body" VARCHAR(255), "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+backend        | Executing (default): SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'messages' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;
+backend        | Database connection established!
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:02:59 +0000] "GET / HTTP/1.1" 200 454 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:02:59 +0000] "GET /main.css HTTP/1.1" 200 127 "http://localhost/" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:02:59 +0000] "GET /main.js HTTP/1.1" 200 4697 "http://localhost/" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:02:59 +0000] "GET /vendors~main.js HTTP/1.1" 200 106199 "http://localhost/" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:02:59 +0000] "GET /vendors~main-1.css HTTP/1.1" 200 103220 "http://localhost/" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:02:59 +0000] "GET /a3e2211dddcba197b5bbf2aa9d5d9a9a.svg HTTP/1.1" 200 1524 "http://localhost/" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:03:00 +0000] "GET /favicon.ico HTTP/1.1" 200 454 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+proxy          | nginx.1    | 192.168.224.1 - - [13/Jan/2020:23:03:08 +0000] "GET /api/ping HTTP/1.1" 200 4 "http://localhost/" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping backend_db  ... done
+Stopping redis-cache ... done
+Stopping backend     ... done
+Stopping frontend    ... done
+Stopping proxy       ... done
+[stein@i7 2.8]$ docker-compose down
+Removing backend_db  ... done
+Removing redis-cache ... done
+Removing backend     ... done
+Removing frontend    ... done
+Removing proxy       ... done
+Removing network 28_default
+[stein@i7 2.8]$ 
+
