@@ -12,11 +12,10 @@ RUN apt-get update && apt-get install -y curl git && \
     git clone https://github.com/docker-hy/backend-example-docker && \
     apt-get purge -y --auto-remove curl git && \ 
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* 
+    rm -rf /var/lib/apt/lists/* && \
+    cd /backend-example-docker/ && npm install && npm install -g webpack &&  npm install -g serve
     
 WORKDIR /backend-example-docker/ 
-RUN npm install && npm install -g webpack &&  npm install -g serve
-
 
 CMD ["npm", "start"]
 
