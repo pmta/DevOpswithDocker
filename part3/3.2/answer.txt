@@ -1,0 +1,5 @@
+# Inside container content is fethed to "/downloads" folder. This can be bind mount from host
+# to store the downloaded content on host.
+# Run 
+[@i7]$ docker run -it -v $(pwd):/downloads yle-dl <url>
+
