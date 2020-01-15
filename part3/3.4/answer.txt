@@ -1,0 +1,16 @@
+#image sizes with ubuntu 16.04
+
+[stein@i7 backend]$ docker images
+REPOSITORY                                    TAG                 IMAGE ID            CREATED             SIZE
+backend                                       latest              6c2397e1a405        31 seconds ago      364MB
+[stein@i7 frontend]$ docker images 
+REPOSITORY                                    TAG                 IMAGE ID            CREATED             SIZE
+frontend                                      latest              2991d2e45d82        19 seconds ago      485MB
+
+
+# Image sizes with node:alpine
+[stein@i7 3.4]$ docker images
+REPOSITORY                                    TAG                 IMAGE ID            CREATED             SIZE
+backend                                       latest              52babe0c8a27        23 seconds ago      171MB
+frontend                                      latest              753605d151fd        58 seconds ago      297MB
+
