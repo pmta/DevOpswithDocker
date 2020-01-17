@@ -1611,7 +1611,7 @@ frontend                                      latest              2991d2e45d82  
 
 
 
-
+# Frontend size 589MB down to 485MB
 
 
 
