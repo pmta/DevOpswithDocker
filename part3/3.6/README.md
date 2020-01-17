@@ -2,7 +2,7 @@
 
 Optimized the container used to build RutOS. Image size down from 1.71GB to 689MB.
 
-See "rutos_container.txt" for details.
+See "answer.txt" for details.
 
 
 
