@@ -1,0 +1,182 @@
+[stein@i7 3.5]$  docker build . -t frontend
+Sending build context to Docker daemon  3.072kB
+Step 1/11 : FROM node:alpine as build-stage
+ ---> 364fb8e7f28a
+Step 2/11 : WORKDIR /
+ ---> Running in e7b6381287a7
+Removing intermediate container e7b6381287a7
+ ---> a1da28b8ef45
+Step 3/11 : RUN apk add --no-cache git &&     git clone https://github.com/docker-hy/frontend-example-docker.git &&     cd /frontend-example-docker/ &&     npm install && npm run build
+ ---> Running in 158739a2bd30
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+(1/6) Installing ca-certificates (20191127-r0)
+(2/6) Installing nghttp2-libs (1.40.0-r0)
+(3/6) Installing libcurl (7.67.0-r0)
+(4/6) Installing expat (2.2.9-r1)
+(5/6) Installing pcre2 (10.34-r1)
+(6/6) Installing git (2.24.1-r0)
+Executing busybox-1.31.1-r8.trigger
+Executing ca-certificates-20191127-r0.trigger
+OK: 23 MiB in 22 packages
+Cloning into 'frontend-example-docker'...
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 1029 packages from 415 contributors and audited 11636 packages in 21.14s
+found 313 vulnerabilities (6 moderate, 307 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+> frontend-example-docker@1.0.0 build /frontend-example-docker
+> webpack --mode production
+
+Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
+Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+Hash: 1bcb2b1097ed8320432f
+Version: webpack 4.29.6
+Time: 21759ms
+Built at: 01/17/2020 5:16:00 PM
+                                 Asset       Size  Chunks                    Chunk Names
+0ab54153eeeca0ce03978cc463b257f7.woff2   39.2 KiB          [emitted]         
+  13db00b7a34fee4d819ab7f9838cc428.eot   96.3 KiB          [emitted]         
+  701ae6abd4719e9c2ada3535a497b341.eot   30.4 KiB          [emitted]         
+  82f60bd0b94a1ed68b1e6e309ce2e8c3.svg    105 KiB          [emitted]         
+  8e3c7f5520f5ae906c6cf6d7f3ddcd19.eot    104 KiB          [emitted]         
+  962a1bf31c081691065fe333d9fa8105.svg    382 KiB          [emitted]  [big]  
+  9c74e172f87984c48ddf5c8108cabe67.png   27.5 KiB          [emitted]         
+ a046592bac8f2fd96e994733faf3858c.woff   62.2 KiB          [emitted]         
+  a1a749e89f578a49306ec2b055c073da.svg    496 KiB          [emitted]  [big]  
+  a3e2211dddcba197b5bbf2aa9d5d9a9a.svg   3.19 KiB          [emitted]         
+  ad97afd3337e8cda302d10ff5a4026b8.ttf   30.2 KiB          [emitted]         
+  b87b9ba532ace76ae9f6edfe9f72ded2.ttf    103 KiB          [emitted]         
+  bff6c47a9da5c7cfa2e8a552e2df3a78.svg    3.2 KiB          [emitted]         
+  c5ebe0b32dc1b5cc449a76c4204d13bb.ttf   96.1 KiB          [emitted]         
+cd6c777f1945164224dee082abaea03a.woff2     12 KiB          [emitted]         
+e8c322de9658cbeb8a774b6624167c2c.woff2   53.2 KiB          [emitted]         
+ ef60a4f6c25ef7f39f2d25a748dbecfe.woff   14.4 KiB          [emitted]         
+ faff92145777a3cbaf8e7367b4807987.woff   49.3 KiB          [emitted]         
+                            index.html  454 bytes          [emitted]         
+                              main.css  127 bytes       0  [emitted]         main
+                               main.js   19.1 KiB       0  [emitted]         main
+                    vendors~main-1.css    602 KiB       1  [emitted]  [big]  vendors~main
+                       vendors~main.js    328 KiB       1  [emitted]  [big]  vendors~main
+Entrypoint main [big] = vendors~main-1.css vendors~main.js main.css main.js
+  [7] ./node_modules/semantic-ui-react/dist/es/lib/index.js + 1 modules 2.94 KiB {1} [built]
+      |    2 modules
+ [51] ./node_modules/semantic-ui-react/dist/es/elements/Icon/Icon.js + 1 modules 6.22 KiB {1} [built]
+      |    2 modules
+ [80] ./node_modules/react-redux/es/index.js + 19 modules 36.2 KiB {1} [built]
+      |    20 modules
+ [93] ./node_modules/semantic-ui-react/dist/es/elements/Label/Label.js + 2 modules 10.6 KiB {1} [built]
+      |    3 modules
+ [94] (webpack)/buildin/global.js 472 bytes {1} [built]
+[246] ./src/assets/toscalogo_color.svg 82 bytes {0} [built]
+[247] ./src/assets/toscalogo_grayscale.svg 82 bytes {0} [built]
+[266] multi @babel/polyfill ./src 40 bytes {0} [built]
+[446] (webpack)/buildin/harmony-module.js 573 bytes {1} [built]
+[448] ./src/assets/custom.css 39 bytes {0} [built]
+[585] ./src/index.js + 18 modules 37.8 KiB {0} [built]
+      | ./src/index.js 569 bytes [built]
+      | ./src/util/store.js 481 bytes [built]
+      | ./util/common.js 117 bytes [built]
+      | ./src/util/apiConnection.js 4.7 KiB [built]
+      | ./src/util/redux/index.js 219 bytes [built]
+      | ./src/util/redux/messageReducer.js 1.76 KiB [built]
+      | ./src/util/redux/simpleReducer.js 1.47 KiB [built]
+      | ./src/util/common.js 221 bytes [built]
+      |     + 11 hidden modules
+[586] ./node_modules/semantic-ui-react/dist/es/elements/Button/Button.js + 3 modules 17.7 KiB {1} [built]
+      |    4 modules
+[594] ./node_modules/react-router-dom/es/BrowserRouter.js + 12 modules 41 KiB {1} [built]
+      |    13 modules
+[596] ./node_modules/react-router-dom/es/Switch.js + 1 modules 3.35 KiB {1} [built]
+      |    2 modules
+[597] ./node_modules/react-router-dom/es/Route.js + 1 modules 5.9 KiB {1} [built]
+      |    2 modules
+    + 971 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  962a1bf31c081691065fe333d9fa8105.svg (382 KiB)
+  a1a749e89f578a49306ec2b055c073da.svg (496 KiB)
+  vendors~main-1.css (602 KiB)
+  vendors~main.js (328 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (949 KiB)
+      vendors~main-1.css
+      vendors~main.js
+      main.css
+      main.js
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 2 hidden modules
+Child mini-css-extract-plugin node_modules/css-loader/index.js!node_modules/semantic-ui-css/semantic.min.css:
+    Entrypoint mini-css-extract-plugin = *
+       19 modules
+Child mini-css-extract-plugin node_modules/css-loader/index.js!src/assets/custom.css:
+    Entrypoint mini-css-extract-plugin = *
+    [0] ./node_modules/css-loader!./src/assets/custom.css 340 bytes {0} [built]
+        + 1 hidden module
+Removing intermediate container 158739a2bd30
+ ---> 526f132ecc79
+Step 4/11 : FROM node:alpine
+ ---> 364fb8e7f28a
+Step 5/11 : ENV API_URL=http://localhost:8000
+ ---> Running in ae481ee141a7
+Removing intermediate container ae481ee141a7
+ ---> 74f4b15764f0
+Step 6/11 : WORKDIR /
+ ---> Running in 5b7a680a44e9
+Removing intermediate container 5b7a680a44e9
+ ---> c56f9490f94b
+Step 7/11 : RUN npm install -g serve &&     adduser -D app && mkdir /dist/ && chown -R app:app /dist/
+ ---> Running in d186e4a01d1c
+/usr/local/bin/serve -> /usr/local/lib/node_modules/serve/bin/serve.js
++ serve@11.3.0
+added 78 packages from 39 contributors in 4.434s
+Removing intermediate container d186e4a01d1c
+ ---> 4e808cbeb8a7
+Step 8/11 : COPY --chown=app:app --from=build-stage /frontend-example-docker/dist/* /dist/
+ ---> 5f18754d664b
+Step 9/11 : USER app
+ ---> Running in db7b2375ad5b
+Removing intermediate container db7b2375ad5b
+ ---> 62cd16ae3306
+Step 10/11 : CMD ["serve", "-s", "-l", "5000", "dist"]
+ ---> Running in e44e8217eacc
+Removing intermediate container e44e8217eacc
+ ---> 8ed38f5bf7b1
+Step 11/11 : EXPOSE 5000
+ ---> Running in bdbd1aa924e5
+Removing intermediate container bdbd1aa924e5
+ ---> 7932cb842a68
+Successfully built 7932cb842a68
+Successfully tagged frontend:latest
+[stein@i7 3.5]$ 
+[stein@i7 3.5]$ docker run -it -p 5000:5000 frontend
+ERROR: Cannot copy to clipboard: Couldn't find the required `xsel` binary. On Debian/Ubuntu you can install it with: sudo apt install xsel
+
+   ┌────────────────────────────────────────────────┐
+   │                                                │
+   │   Serving!                                     │
+   │                                                │
+   │   - Local:            http://localhost:5000    │
+   │   - On Your Network:  http://172.17.0.2:5000   │
+   │                                                │
+   └────────────────────────────────────────────────┘
+
+^C
+INFO: Gracefully shutting down. Please wait...
+[stein@i7 3.5]$ 
+
