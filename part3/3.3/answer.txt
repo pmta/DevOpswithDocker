@@ -25,3 +25,5 @@ $ ps ax
 $ exit
 [stein@i7 3.3]$ 
 
+# Both containers run services as user "app"
+
